@@ -1,87 +1,166 @@
 # DevOps Intern Final Assessment
 
 ## Author
+
 Tanjim Ahmed
 
 ## Date
+
 August 2026
 
 ## Project Description
-This project demonstrates a complete DevOps workflow using Linux, Git, Docker, GitHub Actions CI/CD, Nomad deployment, and Grafana Loki monitoring.
+
+This project demonstrates a complete DevOps workflow using open-source tools including Linux, Git, Docker, GitHub Actions CI/CD, Nomad deployment, and Grafana Loki monitoring.
 
 ## Technologies Used
 
-- Linux
-- Git & GitHub
-- Docker
-- GitHub Actions
-- Nomad
-- Grafana Loki
+* Linux
+* Git & GitHub
+* Docker
+* GitHub Actions
+* Nomad
+* Grafana Loki
 
-## Project Implementation
+---
 
-### 1. Git & GitHub Setup
-Created a public GitHub repository with README documentation and sample Python application.
+# Project Implementation
 
-### 2. Linux & Shell Scripting
-Created a system information script that displays:
-- Current user
-- Current date
-- Disk usage
+## 1. Git & GitHub Setup
 
-### 3. Docker Containerization
-Containerized a Python application using Dockerfile.
+Created a public GitHub repository with README documentation and a sample Python application.
 
-Build and run:
+Application file:
 
+```
+hello.py
+```
+
+Output:
+
+```
+Hello, DevOps!
+```
+
+---
+
+## 2. Linux & Shell Scripting
+
+Created a shell script to display basic system information.
+
+Script:
+
+```
+scripts/sysinfo.sh
+```
+
+The script displays:
+
+* Current user
+* Current date
+* Disk usage
+
+Run:
+
+```bash
+chmod +x scripts/sysinfo.sh
+./scripts/sysinfo.sh
+```
+
+---
+
+## 3. Docker Containerization
+
+Containerized the Python application using Docker.
+
+Docker file:
+
+```
+Dockerfile
+```
+
+Build Docker image:
+
+```bash
 docker build -t hello-devops .
+```
+
+Run Docker container:
+
+```bash
 docker run hello-devops
+```
 
+The container runs:
 
-### 4. CI/CD with GitHub Actions
-Configured GitHub Actions workflow to automatically run Python code on every push.
+```
+python hello.py
+```
+
+---
+
+## 4. CI/CD with GitHub Actions
+
+Configured GitHub Actions workflow to automatically execute the Python application on every push.
 
 Workflow file:
+
+```
 .github/workflows/ci.yml
+```
 
+Pipeline steps:
 
-### 5. Nomad Deployment
-Created a Nomad job file to deploy the Docker container.
+* Checkout repository
+* Run Python application
+* Verify successful execution
+
+---
+
+## 5. Nomad Deployment
+
+Created a Nomad job configuration to deploy the Docker container.
 
 Nomad job file:
+
+```
 nomad/hello.nomad
+```
 
+Deployment command:
 
-### 6. Monitoring with Grafana Loki
-Configured Loki monitoring documentation and log collection setup.
+```bash
+nomad job run nomad/hello.nomad
+```
 
-Monitoring file:
+The job uses:
+
+* Service type deployment
+* Docker container driver
+* CPU and memory resource allocation
+
+---
+
+## 6. Monitoring with Grafana Loki
+
+Configured Grafana Loki monitoring documentation.
+
+Monitoring documentation:
+
+```
 monitoring/loki_setup.txt
+```
 
+Loki is used for:
 
-## How to Run
+* Centralized log collection
+* Log querying
+* Application monitoring
 
-Run Python:
+---
 
-python hello.py
+# Repository Structure
 
-
-Run Linux script:
-
-chmod +x scripts/sysinfo.sh
-
-./scripts/sysinfo.sh
-
-
-Run Docker:
-
-docker build -t hello-devops .
-
-docker run hello-devops
-
-
-## Repository Structure
-
+```
 devops-intern-final/
 
 ├── hello.py
@@ -102,7 +181,44 @@ devops-intern-final/
 
 └── monitoring/
     └── loki_setup.txt
+```
 
+---
+
+# How to Run
+
+## Run Python Application
+
+```bash
+python hello.py
+```
+
+## Run Linux Script
+
+```bash
+chmod +x scripts/sysinfo.sh
+./scripts/sysinfo.sh
+```
+
+## Run Docker Container
+
+```bash
+docker build -t hello-devops .
+docker run hello-devops
+```
+
+---
+
+# Skills Demonstrated
+
+* Git repository management
+* Linux shell scripting
+* Docker containerization
+* CI/CD automation
+* Nomad deployment
+* Log monitoring with Grafana Loki
+
+---
 
 ## Author
 
