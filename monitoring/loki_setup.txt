@@ -1,0 +1,37 @@
+Grafana Loki Setup Documentation
+
+Project: DevOps Intern Final Assessment
+Author: Tanjim Ahmed
+
+Loki Setup:
+
+Loki was configured using Docker.
+
+Command used to start Loki:
+
+docker run -d --name loki -p 3100:3100 grafana/loki:3.0.0
+
+
+Check Loki status:
+
+http://localhost:3100/ready
+
+
+Log Query:
+
+Logs can be viewed using Grafana Explore with Loki as the data source.
+
+Example query:
+
+{job="docker"}
+
+
+Tools Used:
+
+- Docker
+- Grafana Loki
+- Grafana
+
+Purpose:
+
+Grafana Loki is used for centralized log aggregation and monitoring of application logs.
