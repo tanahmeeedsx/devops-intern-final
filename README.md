@@ -208,7 +208,31 @@ docker run hello-devops
 ```
 
 ---
+---
 
+## 7. Testing & Security Improvements
+
+Added automated testing and security hardening to the project.
+
+Test file:
+
+tests/test_hello.py
+
+Run tests:
+
+pip install -r requirements.txt
+pytest -v
+
+Security improvements:
+
+* Dockerfile updated to use a slim base image (python:3.12-slim)
+* Container now runs as a non-root user (appuser) instead of root
+* Added .gitignore and .dockerignore to exclude unnecessary files from version control and the Docker build context
+* Added requirements.txt to pin dependency versions
+* Added LICENSE (MIT)
+* CI/CD pipeline now runs automated tests, builds the Docker image, and runs the container on every push
+
+---
 # Skills Demonstrated
 
 * Git repository management
