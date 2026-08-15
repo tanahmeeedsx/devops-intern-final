@@ -62,11 +62,6 @@ docker run hello-devops
 The container runs:
 ---
 
-## 4. CI/CD with GitHub Actions
-Configured GitHub Actions workflow to automatically run tests, execute the Python application, and build/run the Docker image on every push.
-
-Workflow file:
----
 
 ## 4. CI/CD with GitHub Actions
 Configured GitHub Actions workflow to automatically run tests, execute the Python application, and build/run the Docker image on every push.
